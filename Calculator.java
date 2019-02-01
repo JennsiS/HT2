@@ -7,6 +7,13 @@
  * */
 public interface Calculator {
     
+    /**
+     *
+     * @param num1
+     * @param num2
+     * @param op
+     * @return
+     */
     public int Calculate (int num1, int num2, String op);
     
 }

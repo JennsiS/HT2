@@ -2,46 +2,78 @@
 
 import java.util.Vector;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+
 
 /**
  * @author Jennifer Sandoval,Andrea Paniagua
+ * @param <E>
  * @Carne 18962,18733
  * @date 25/01/19
  * @name Pila.java
- * <p></p>
+ * <p> Esta clase implementa la interfaz Stack y se reescriben los metodos en funcion de un vector</p>
  * */
 
 
 
-public abstract class Pila implements Stack {
+public class Pila <E> implements Stack <E> {
+
+    /**
+     *
+     */
+    protected Vector <E> texto;
+
+    /**
+     *
+     */
+    public Pila(){
+       Vector texto= new Vector<E> ();
+    }
     
-    
-    public Vector leer () throws FileNotFoundException{
-        File f = new File( "C:\\datos.txt" );
-        BufferedReader entrada;
-        Vector texto = new Vector();
-        entrada = new BufferedReader( new FileReader( f ) );
-        try {
-            entrada = new BufferedReader( new FileReader( f ) );
-            String linea;
-        while(entrada.ready()){
-            linea = entrada.readLine();
-            texto.add(linea);
-        }
-        }catch (IOException e) {
-        e.printStackTrace();
-        }finally {
-        try{
-        entrada.close();
-        }catch(IOException e1){}
-}
-        return texto;
-}
+    /**
+     *
+     * @param item , recibe un parametro de tipo generico el cual es ingresado al vector
+     */
+    @Override
+    public void push(E item) {
+        texto.add(item);
+    }
+
+    /**
+     *
+     * @return devuelve el ultimo elemento del vector
+     */
+    @Override
+    public E pop() {
+        return texto.remove(size() - 1);
+        
+    }
+
+    /**
+     *
+     * @return verifica si el elemento se encuentra dentro del vector
+     */
+    @Override
+    public E peek() {
+        return texto.get(size() - 1);
+    }
+
+    /**
+     *
+     * @return devuelve una respuesta de si el vector esta vacio o no
+     */
+    @Override
+    public boolean empty() {
+        return size() == 0;
+    }
+
+    /**
+     *
+     * @return devuelve el tamaño del vector
+     */
+    @Override
+    public int size() {
+        return texto.size();
+    }
         
 
 
