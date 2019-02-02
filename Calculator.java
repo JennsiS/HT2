@@ -6,7 +6,7 @@
  * <p>Interfaz de la calculadora  </p>
  * */
 public interface Calculator {
-    
+
     /**
      *
      * @param num1
@@ -15,5 +15,5 @@ public interface Calculator {
      * @return
      */
     public int Calculate (int num1, int num2, String op);
-    
+
 }
