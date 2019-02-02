@@ -26,9 +26,9 @@ public class Pila <E> implements Stack <E> {
      *
      */
     public Pila(){
-       Vector texto= new Vector<E> ();
+        texto= new Vector<E> ();
     }
-    
+
     /**
      *
      * @param item , recibe un parametro de tipo generico el cual es ingresado al vector
@@ -45,7 +45,7 @@ public class Pila <E> implements Stack <E> {
     @Override
     public E pop() {
         return texto.remove(size() - 1);
-        
+
     }
 
     /**
@@ -74,12 +74,12 @@ public class Pila <E> implements Stack <E> {
     public int size() {
         return texto.size();
     }
-        
 
 
 
-   
-   
-    
+
+
+
+
 }
 

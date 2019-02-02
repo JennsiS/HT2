@@ -12,9 +12,10 @@ import java.io.IOException;
  * <p>Clase principal del programa, lee un archivo de texto en notacion postfix y realiza las operaciones  </p>
  * */
 public class PrincipalCalculator {
-    
+   
  public static void main(String[] args) throws FileNotFoundException, IOException 
     {
+       
         Pila doc = new Pila();
         Calcu nueva = new Calcu();
     //Se declaran las variables que seran utiles para leer el archivo de tipo texto
@@ -49,10 +50,7 @@ public class PrincipalCalculator {
                     int n2= (int) doc.pop();
                     int r= nueva.Calculate(n1, n2,operando);
                     System.out.println("El resultado de la operacion de "+n2+ " "+ operando+ " "+n1+ " es: "+r);
-                 
-                 
-                            
-                }
+               
                     
              }
            
@@ -60,4 +58,4 @@ public class PrincipalCalculator {
         }
     }
  
-    
+    }
